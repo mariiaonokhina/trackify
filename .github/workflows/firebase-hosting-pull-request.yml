@@ -1,14 +1,25 @@
 name: Deploy to Firebase Hosting on PR
-on: pull_request
-jobs:
-  build_and_deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - name: Debug - List files
+on:
+  pull_request:
+
+permissions:
+  checks: write
+  contents: read
+  pull-requests: write
+
+jobs:
+  build_and_preview:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Debug - List Files
         run: ls -R
-      
+
       - name: Debug - Find package.json
         run: find . -name "package.json"
 
@@ -19,16 +30,15 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./trackify/trackify
 
       - name: Build project
         run: npm run build
-        working-directory: ./trackify/trackify
 
-      - name: Deploy to Firebase Hosting
+      - name: Deploy to Firebase Hosting Preview
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
+
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TRACKIFY_3140 }}
+
           projectId: trackify-3140
-          entryPoint: ./trackify/trackify
