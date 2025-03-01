@@ -1,54 +1,33 @@
-# React + TypeScript + Vite
+# Trackify (Job Application Tracker)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 About
+**Trackify** is a job application tracking web app designed to help users organize and optimize their job search process. This project will serve as the final project for Brooklyn College CISC 3140 (Web Apps) class.
 
-Currently, two official plugins are available:
+## 👥 Team
+- @mariiaonokhina
+- @oleksiisud
+- @anaiimoreno
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✅ Implemented Features
+...
 
-## Expanding the ESLint configuration
+## 🚀 Planned Features
+- [ ] **User Authentication** – Sign in using GitHub or email
+- [ ] **Application Tracker** – Add, edit, and categorize job applications  
+- [ ] **Dashboard & Application Summary** – Visualize progress with job status metrics  
+- [ ] **File Management** – Upload and store resumes  
+- [ ] **Email Notifications** – Receive reminders for upcoming deadlines  
+- [ ] **Filters & Sorting** – Search applications by status, role, company, or date  
+- [ ] **Responsive User Interface** – Works on both desktop and mobile
+- [ ] **Download Application History as a CSV**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
+- **Frontend:** React.js with TypeScript (built with Vite)
+- **Backend:** Firebase
+- **Authentication:** GitHub OAuth
+- **Hosting:** Firebase or Netlify
+- **Notifications:** Firebase Cloud Scheduler
+- **Charts & Visualization:** React Recharts
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🔧 Installation & Setup
+... 
