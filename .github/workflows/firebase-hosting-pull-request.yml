@@ -17,15 +17,23 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18 
+          node-version: 18
+
+      - name: Move to Correct Directory (If Needed)
+        run: |
+          if [ -d "trackify/trackify" ]; then
+            mv trackify/trackify/* trackify/
+            rm -rf trackify/trackify
+          fi
+        shell: bash
 
       - name: Install Dependencies
         run: npm install
-        working-directory: ./trackify/trackify
+        working-directory: ./trackify
 
       - name: Build Project
         run: npm run build
-        working-directory: ./trackify/trackify
+        working-directory: ./trackify 
 
       - name: Deploy to Firebase Hosting Preview
         uses: FirebaseExtended/action-hosting-deploy@v0
@@ -33,4 +41,4 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TRACKIFY_3140 }}
           projectId: trackify-3140
-          entryPoint: ./trackify/trackify 
+          entryPoint: ./trackify
