@@ -1,5 +1,3 @@
-# Firebase Hosting Deployment Workflow
-
 name: Deploy to Firebase Hosting on PR
 on: pull_request
 permissions:
@@ -14,6 +12,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Debug - List Files
+        run: ls -R
+        shell: bash
+
+      - name: Debug - Check `package.json` Location
+        run: find . -name "package.json"
+        shell: bash
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -21,7 +27,7 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-        working-directory: ./trackify  
+        working-directory: ./trackify
 
       - name: Build Project
         run: npm run build
