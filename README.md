@@ -6,6 +6,7 @@
 ## 👥 Team
 - @mariiaonokhina
 - @oleksiisud
+- @anaiimoreno
 
 ## ✅ Implemented Features
 ...
