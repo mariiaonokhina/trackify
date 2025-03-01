@@ -27,11 +27,11 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-        working-directory: ./trackify
+        working-directory: trackify 
 
       - name: Build Project
         run: npm run build
-        working-directory: ./trackify 
+        working-directory: trackify
 
       - name: Deploy to Firebase Hosting Preview
         uses: FirebaseExtended/action-hosting-deploy@v0
@@ -39,4 +39,4 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TRACKIFY_3140 }}
           projectId: trackify-3140
-          entryPoint: ./trackify
+          entryPoint: trackify 
