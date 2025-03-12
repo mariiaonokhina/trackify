@@ -7,6 +7,7 @@
 - @mariiaonokhina
 - @oleksiisud
 - @anaiimoreno
+- @edonagurina
 
 ## ✅ Implemented Features
 ...
