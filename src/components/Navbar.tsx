@@ -1,4 +1,4 @@
-import './Navbar.css'
+import '../styles/Navbar.css'
 
 function Navbar() {
   return (
@@ -29,13 +29,13 @@ function Navbar() {
 					</div>
 					<div className='navbar-right'>
             <img
-						  src={"src/assets/accessibility.svg"} 
+						  src={"accessibility.svg"} 
 						  className='accessibility'
 					  />
 						<span className="search-bar" >
 							{"Search"}
               <img
-							src={"src/assets/search.png"} 
+							src={"search.png"} 
 							className='search-icon'
 						  />
 						</span>
