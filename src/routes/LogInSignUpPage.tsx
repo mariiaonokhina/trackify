@@ -2,7 +2,6 @@ import { useState } from "react";
 import LogInForm from "../components/LogInForm";
 import SignUpForm from "../components/SignUpForm";
 import "../styles/LogInSignUpPage.css";
-import { Link } from "react-router-dom";
 
 export default function LogInSignUpPage() {
   const [hasAccount, setHasAccount] = useState(true);
