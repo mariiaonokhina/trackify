@@ -6,6 +6,7 @@
     justify-content: space-evenly;
     border-radius: 10px;
     height: 70vh;
+    min-width: 400px;
     width: 40vw;
 }
 
