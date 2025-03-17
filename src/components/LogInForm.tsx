@@ -17,7 +17,11 @@ export default function LogInForm () {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/");
     } catch (err: any) {
-      setError(err.message);
+      if (err.code === "auth/invalid-credential") {
+        setError("Wrong email or password.");
+      } else {
+        setError(err.message);
+      }
     }
   };
 
@@ -53,7 +57,7 @@ export default function LogInForm () {
             <button className="login-form-btn" type="submit">Log In</button>
           </form>
 
-          {error && <p>Error: {error}</p>}
+          {error && <p className="form-error-message">{error}</p>}
 
           <div className="login-github-container">
             <h3>Log in with</h3>
