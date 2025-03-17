@@ -1,7 +1,8 @@
 import "../styles/SignUpForm.css";
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../services/firebaseConfig";
+import { signInWithPopup } from "firebase/auth";
+import { auth, githubProvider } from "../services/firebaseConfig";
 import { useNavigate } from "react-router-dom";
 
 export default function SignUpForm () {
@@ -35,6 +36,15 @@ export default function SignUpForm () {
       }
     }
   };  
+
+  const handleGitHubLogin = async () => {
+      try {
+        await signInWithPopup(auth, githubProvider);
+        navigate("/");
+      } catch (err: any) {
+        alert("GitHub login failed: " + err.message);
+      }
+    };
 
     return (
       <div className='SignUpForm'>
@@ -84,7 +94,7 @@ export default function SignUpForm () {
 
       <div className="login-github-container">
         <h3>Sign up with</h3>
-        <img className="github-logo-login" src="github-brands-solid.svg" />
+        <img onClick={handleGitHubLogin} className="github-logo-login" src="github-brands-solid.svg" />
       </div>
     </div>
   );
