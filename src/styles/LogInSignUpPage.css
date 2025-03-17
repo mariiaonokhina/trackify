@@ -1,0 +1,25 @@
+.LogInSignUpPage {
+    height: 91vh;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: center;
+}
+
+.LogInSignUpPage div {
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+}
+
+.LogInSignUpPage div p {
+    margin-top: 10px;
+    width: fit-content;
+    place-self: center;
+    font-weight: normal;
+}
+
+.LogInSignUpPage div p span {
+    font-weight: bold;
+    cursor: pointer;
+}
