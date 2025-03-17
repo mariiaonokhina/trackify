@@ -1,0 +1,70 @@
+.LogInForm {
+    background-color: rgb(233, 232, 232);
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    height: 70vh;
+    min-width: 400px;
+    width: 40vw;
+}
+
+h1 {
+    font-size: xxx-large;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    place-items: center;
+    justify-content: space-between;
+}
+
+.login-email-container, .login-password-container {
+    position: relative;
+    width: 300px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.log-in-input-field {
+    border: 0.5px solid black;
+    border-radius: 3px;
+    font-size: large;
+    padding: 5px;
+}
+
+label {
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: small;
+}
+
+.login-form-btn {
+    width: 200px;
+    padding: 10px;
+    font-size: large;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(246, 245, 245);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-github-container {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: space-evenly;
+    gap: 3px;
+}
+
+.github-logo-login {
+    height: auto;
+    width: 60px;
+    cursor: pointer;
+}
