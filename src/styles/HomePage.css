@@ -67,6 +67,17 @@ body {
   font-weight: normal; 
 }
 
+.login-signup-btn {
+  width: 200px;
+  padding: 10px;
+  font-size: large;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(246, 245, 245);
+  font-weight: bold;
+  cursor: pointer;
+}
+
 @media (max-width: 1024px) {
   .dashboard-overview {
     grid-template-columns: repeat(2, 1fr); 
