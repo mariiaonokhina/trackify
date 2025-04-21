@@ -24,7 +24,7 @@ export default function SignUpForm () {
   
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/");
+      navigate("/home");
     } catch (err: any) {
       if (err.code === "auth/email-already-in-use") {
         setError("An account with this email already exists.");
@@ -40,7 +40,7 @@ export default function SignUpForm () {
   const handleGitHubLogin = async () => {
       try {
         await signInWithPopup(auth, githubProvider);
-        navigate("/");
+        navigate("/home");
       } catch (err: any) {
         alert("GitHub login failed: " + err.message);
       }

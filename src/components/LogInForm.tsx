@@ -10,13 +10,13 @@ export default function LogInForm () {
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
 
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/");
+      navigate("/home");
     } catch (err: any) {
       if (err.code === "auth/invalid-credential") {
         setError("Wrong email or password.");
@@ -29,7 +29,7 @@ export default function LogInForm () {
   const handleGitHubLogin = async () => {
     try {
       await signInWithPopup(auth, githubProvider);
-      navigate("/");
+      navigate("/home");
     } catch (err: any) {
       alert("GitHub login failed: " + err.message);
     }

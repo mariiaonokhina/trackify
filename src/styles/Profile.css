@@ -1,0 +1,74 @@
+.profile-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+  }
+  
+  .profile-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 1.5rem;
+    border: 2px solid #ccc;
+  }
+  
+  .profile-info p {
+    margin: 0.5rem 0;
+  }
+  
+  .resume-section {
+    margin-top: 1.5rem;
+  }
+  
+  .resume-section input {
+    margin: 0.5rem 0;
+    display: block;
+  }
+  
+  .resume-section button {
+    padding: 0.5rem 1rem;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .resume-section button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }  
+
+  /* note under the section title */
+.note-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* status messages */
+  .status-success {
+    color: #2e7d32;         /* green */
+    margin-top: 0.5rem;
+  }
+  .status-error {
+    color: #d32f2f;         /* red */
+    margin-top: 0.5rem;
+  }
+  
+  /* keep the button from jittering on loading text width change */
+  button[disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
