@@ -13,7 +13,7 @@ function Navbar() {
 							<a>Apply/Resources</a>
 						</li>
 						<li>
-							<a>Profile</a>
+							<Link to="/profile">Profile</Link>
 						</li>
 						<li>
 							<a>Setting</a>

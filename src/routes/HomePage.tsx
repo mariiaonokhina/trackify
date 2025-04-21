@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "../services/firebaseConfig";
 import { useNavigate } from "react-router-dom";
+import { STATUS_OPTIONS, Status } from "../constants/Statuses";
 import "../styles/HomePage.css";
 
 const HomePage: React.FC = () => {
