@@ -1,4 +1,3 @@
-import React from 'react';
 import ApplyResourceSidebar from '../components/ApplyResourceSidebar';
 import "../styles/ApplyResourcePage.css";
   
