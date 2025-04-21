@@ -1,7 +1,36 @@
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import ApplyResourceSidebar from '../components/ApplyResourceSidebar';
 import "../styles/ApplyResourcePage.css";
-  
+
 function ApplyResourcePage() {
+  const [searchParams] = useSearchParams();
+  const rawTitle = searchParams.get('title');
+  const rawLocation = searchParams.get('loc');
+
+  // 🧠 Default fallback
+  const title = rawTitle || 'Computer Science';
+  const location = rawLocation || 'New York';
+
+  const [jobs, setJobs] = useState<{ title: string; company: string; location: string; link: string }[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(`https://your-cloud-function-url/getJobs?title=${encodeURIComponent(title)}&loc=${encodeURIComponent(location)}`);
+        const data = await response.json();
+        setJobs(data.jobs || []);
+      } catch (error) {
+        console.error("Error fetching jobs:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchJobs();
+  }, [title, location]);
     return (
         <div className="page-container">
         <ApplyResourceSidebar />
@@ -9,6 +38,22 @@ function ApplyResourcePage() {
             <div className="main-content">
                 <section id="apply" className="odd-content-section">
                     <h3 className="section-title">Apply</h3>
+                    <h4>Search results for <i>{title}</i>{location && ` in ${location}`}</h4>
+                    {loading ? (
+                        <p>Loading job listings...</p>
+                    ) : jobs.length > 0 ? (
+                        <ul className="job-list">
+                        {jobs.map((job, i) => (
+                            <li key={i} className="job-item">
+                            <strong>{job.title}</strong> @ {job.company}<br />
+                            <span>{job.location}</span><br />
+                            <button onClick={() => window.open(job.link, "_blank")}>View Job</button>
+                            </li>
+                        ))}
+                        </ul>
+                    ) : (
+                        <p>No results found.</p>
+                    )}
                 </section>
 
                 <section id="resources" className="even-content-section">
