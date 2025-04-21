@@ -338,7 +338,7 @@ const ResumeAnalyzer: React.FC = () => {
             required
           />
         </div>
-        <button onClick={handleSubmit} disabled={loading}>
+        <button className="analyze-resume-btn" onClick={handleSubmit} disabled={loading}>
           {loading ? 'Analyzing...' : 'Analyze Resume'}
         </button>
         {error && <p className="error">{error}</p>}

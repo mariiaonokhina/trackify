@@ -53,6 +53,11 @@ label {
     background-color: rgb(246, 245, 245);
     font-weight: bold;
     cursor: pointer;
+    color: black;
+}
+
+.login-form-btn:hover {
+    color: white;
 }
 
 .login-github-container {
