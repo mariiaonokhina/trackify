@@ -6,6 +6,7 @@ import HomePage from './routes/HomePage.tsx';
 import Layout from './routes/Layout.tsx';
 import LogInSignUpPage from './routes/LogInSignUpPage.tsx';
 import Profile from './routes/Profile.tsx';
+import ApplyResourcePage from './routes/ApplyResourcePage.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -13,6 +14,7 @@ createRoot(document.getElementById('root')!).render(
 		  <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/home" element={<HomePage />} />
+          <Route path="/apply" element={<ApplyResourcePage />} />
           <Route path="/login" element={<LogInSignUpPage />} />
           <Route path="/profile" element={<Profile />} />
         </Route>

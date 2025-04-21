@@ -10,13 +10,13 @@ function Navbar() {
 							<Link to="/home">Home</Link>
 						</li>
 						<li>
-							<a>Apply/Resources</a>
+							<Link to="/apply">Apply/Resources</Link>
 						</li>
 						<li>
 							<Link to="/profile">Profile</Link>
 						</li>
 						<li>
-							<a>Setting</a>
+							<a>Settings</a>
 						</li>
 						<li>
 							<Link to="/login">Login</Link>
@@ -29,10 +29,6 @@ function Navbar() {
 						</span>
 					</div>
 					<div className='navbar-right'>
-            <img
-						  src={"accessibility.svg"} 
-						  className='accessibility'
-					  />
 						<span className="search-bar" >
 							{"Search"}
               <img
