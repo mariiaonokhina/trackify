@@ -1,7 +1,17 @@
-import { Link } from 'react-router-dom'
-import '../styles/Navbar.css'
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import '../styles/Navbar.css';
 
 function Navbar() {
+  const navigate = useNavigate();
+  const [title, setTitle] = useState('');
+  const [location, setLocation] = useState('');
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!title) return;
+    navigate(`/apply?title=${encodeURIComponent(title)}&loc=${encodeURIComponent(location)}`);
+  };
   return (
     <nav className='navbar' role='navigation'>
 					<div className='navbar-left'>
@@ -16,9 +26,6 @@ function Navbar() {
 							<Link to="/profile">Profile</Link>
 						</li>
 						<li>
-							<a>Settings</a>
-						</li>
-						<li>
 							<Link to="/login">Login</Link>
 						</li>
             </ul>
@@ -29,14 +36,24 @@ function Navbar() {
 						</span>
 					</div>
 					<div className='navbar-right'>
-						<span className="search-bar" >
-							{"Search"}
-              <img
-							src={"search.png"} 
-							className='search-icon'
-						  />
-						</span>
-					</div>
+        <form onSubmit={handleSearch} className="search-form">
+          <input
+            type="text"
+            placeholder="Job title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+          <button type="submit">
+            <img src={"search.png"} className='search-icon' alt="search" />
+          </button>
+        </form>
+      </div>
     </nav>
   )
 }
