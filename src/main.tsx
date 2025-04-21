@@ -6,6 +6,7 @@ import HomePage from './routes/HomePage.tsx';
 import Layout from './routes/Layout.tsx';
 import LogInSignUpPage from './routes/LogInSignUpPage.tsx';
 import Profile from './routes/Profile.tsx';
+import ResumeAnalyzer from './routes/ResumeAnalyzer.tsx';
 import ApplyResourcePage from './routes/ApplyResourcePage.tsx';
 
 createRoot(document.getElementById('root')!).render(
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/apply" element={<ApplyResourcePage />} />
           <Route path="/login" element={<LogInSignUpPage />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/resume-analyzer" element={<ResumeAnalyzer />} />
         </Route>
 		  </Routes>
 	  </BrowserRouter>
