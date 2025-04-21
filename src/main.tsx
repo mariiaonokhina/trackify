@@ -5,6 +5,7 @@ import './styles/index.css'
 import HomePage from './routes/HomePage.tsx';
 import Layout from './routes/Layout.tsx';
 import LogInSignUpPage from './routes/LogInSignUpPage.tsx';
+import Profile from './routes/Profile.tsx';
 import ApplyResourcePage from './routes/ApplyResourcePage.tsx';
 
 createRoot(document.getElementById('root')!).render(
@@ -12,9 +13,10 @@ createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
 		  <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/apply" element={<ApplyResourcePage />} />
           <Route path="/login" element={<LogInSignUpPage />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
 		  </Routes>
 	  </BrowserRouter>
