@@ -26,9 +26,6 @@ function Navbar() {
 							<Link to="/profile">Profile</Link>
 						</li>
 						<li>
-							<a>Settings</a>
-						</li>
-						<li>
 							<Link to="/login">Login</Link>
 						</li>
             </ul>
