@@ -37,6 +37,11 @@ function Navbar() {
           <li>
             <Link to="/login">Login</Link>
           </li>
+		  <li>
+            <Link className="analyzer-btn" 
+			to="/resume-analyzer" 
+			style={{ width: '120px' }}>Resume Analyzer</Link>
+          </li>
         </ul>
       </div>
 
