@@ -4,17 +4,18 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  font-weight: 900; 
+  font-weight: 900;
 }
 
 .home-container {
   padding: 40px;
   max-width: 1200px;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .welcome-message {
   font-size: 46px;
-  font-weight: 900; 
+  font-weight: 900;
   margin-top: 20px;
 }
 
@@ -31,7 +32,7 @@ body {
   padding: 25px;
   text-align: center;
   border-radius: 8px;
-  font-weight: normal; 
+  font-weight: normal;
   font-size: 20px;
   display: flex;
   flex-direction: column;
@@ -50,7 +51,7 @@ body {
 .applications h2 {
   font-size: 36px;
   margin-top: 40px;
-  font-weight: 900; 
+  font-weight: 900;
 }
 
 .application-list {
@@ -64,7 +65,7 @@ body {
   padding: 15px;
   border-radius: 5px;
   font-size: 16px;
-  font-weight: normal; 
+  font-weight: normal;
 }
 
 .login-signup-btn {
@@ -78,6 +79,46 @@ body {
   cursor: pointer;
 }
 
+/* Styling for the Add New Application button */
+.add-application-btn {
+  margin-top: 20px; /* Space above the button */
+  padding: 15px 30px; /* Larger padding for bigger button */
+  background-color: #007BFF; /* Blue background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px; /* Larger font size */
+  font-weight: bold;
+  text-align: center;
+}
+
+.add-application-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Styling for the Add New Application form buttons */
+.application-form button {
+  margin-top: 20px; /* Space between the input fields and buttons */
+  padding: 10px 20px; /* Add padding for more spacious buttons */
+  background-color: #007BFF; /* Blue background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.application-form button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.application-form button + button {
+  margin-top: 20px; /* Extra space between the two buttons */
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
   .dashboard-overview {
     grid-template-columns: repeat(2, 1fr); 
@@ -87,5 +128,31 @@ body {
 @media (max-width: 600px) {
   .dashboard-overview {
     grid-template-columns: repeat(1, 1fr); 
+  }
+
+  .application-list {
+    gap: 5px; /* Reduce gap for smaller screens */
+  }
+
+  .application-item {
+    font-size: 14px; /* Smaller text for better fit on small screens */
+    padding: 10px; /* Slightly smaller padding */
+  }
+
+  .login-signup-btn {
+    width: 100%; /* Full-width button for mobile */
+    padding: 15px; /* More padding for easier tapping */
+  }
+
+  /* Adjust form elements for mobile */
+  .application-form input {
+    width: 100%; /* Full-width inputs on small screens */
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .application-form button {
+    width: auto; /* Revert to the default size on mobile */
+    padding: 10px 20px; /* Ensure padding stays consistent */
   }
 }
