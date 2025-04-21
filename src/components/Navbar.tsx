@@ -7,7 +7,7 @@ function Navbar() {
 					<div className='navbar-left'>
             <ul className='nav-button'>
 						<li>
-							<a>Home</a>
+							<Link to="/">Home</Link>
 						</li>
 						<li>
 							<a>Apply/Resources</a>
