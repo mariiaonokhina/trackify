@@ -3,28 +3,6 @@ import React from "react";
 const LandingPage: React.FC = () => {
   return (
     <div className="bg-[#fefaf6] min-h-screen text-black font-sans">
-      
-      {/* Header */}
-      <header className="flex items-center justify-between px-8 py-4 border-b border-gray-300">
-        <div className="text-xl font-bold">Trackify</div>
-        <nav className="space-x-6 text-sm font-medium">
-          <a href="#" className="hover:underline">Home</a>
-          <a href="#" className="hover:underline">Apply/Resources</a>
-          <a href="#" className="hover:underline">Profile</a>
-          <a href="#" className="hover:underline">Settings</a>
-          <a href="#" className="hover:underline">Login</a>
-        </nav>
-        <div className="flex items-center space-x-4">
-          <input
-            type="text"
-            placeholder="Search"
-            className="px-2 py-1 rounded border border-gray-400 text-sm"
-          />
-          <span className="text-lg">🔍</span>
-          <span className="text-lg">🧑‍🦯</span>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section className="grid grid-cols-1 md:grid-cols-2 h-[60vh] bg-black text-white">
         <div className="flex items-center justify-center text-gray-400 text-xl">
