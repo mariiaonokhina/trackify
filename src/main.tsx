@@ -8,6 +8,7 @@ import LogInSignUpPage from './routes/LogInSignUpPage.tsx';
 import Profile from './routes/Profile.tsx';
 import ResumeAnalyzer from './routes/ResumeAnalyzer.tsx';
 import ApplyResourcePage from './routes/ApplyResourcePage.tsx';
+import LandingPage from './routes/LandingPage.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
