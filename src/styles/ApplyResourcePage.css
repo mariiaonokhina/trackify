@@ -1,0 +1,58 @@
+.page-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .main-content {
+    flex: 1;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .odd-content-section {
+    padding: 1.5rem;
+    background-color: #f8f8f8;
+  }
+  
+  .even-content-section {
+    padding: 1.5rem;
+    font-weight: normal;
+    background-color: #ffffff;
+  }
+  .even-content-section ul {
+
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+  }
+
+  .even-content-section li {
+    width: 100%;
+  }
+  .even-content-section h4 {
+    padding: 1rem 0rem;
+  }
+
+  .even-content-section button {
+    border: none;
+    background-color: #eeeeee;
+    color: black;
+    text-align: left;
+    font-size: medium;
+    padding: 1rem 1rem;
+    text-decoration: none;
+    width: 100%;
+  }
+  
+  .even-content-section button:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .section-title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 600; /* font-semibold */
+    margin-bottom: 0.5rem; /* mb-2 */
+  }  
