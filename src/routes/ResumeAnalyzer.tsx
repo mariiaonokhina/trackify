@@ -50,7 +50,7 @@ const ResumeAnalyzer: React.FC = () => {
       }
       return text;
     } catch (e) {
-      throw new Error(`Error extracting text from PDF: ${e}. Try converting the PDF to an image (PNG/JPEG) and uploading again.`);
+      throw new Error(`Error extracting text from PDF: ${e}. Please ensure the file is a valid PDF and try again. If the issue persists, convert the PDF to an image (PNG/JPEG) and upload again.`);
     }
   };
 
@@ -71,14 +71,14 @@ const ResumeAnalyzer: React.FC = () => {
     } else if (fileExtension === 'pdf') {
       const pdfText = await extractTextFromPDF(file);
       if (!pdfText) {
-        throw new Error('Could not extract text from PDF. Try converting to an image (PNG/JPEG) and uploading again.');
+        throw new Error('Could not extract text from PDF. Please ensure the file is a valid PDF and try again. If the issue persists, convert the PDF to an image (PNG/JPEG) and upload again.');
       }
       return {
         type: 'text',
         content: { type: 'text', text: pdfText },
       };
     } else {
-      throw new Error('Unsupported file format. Use PNG, JPEG, or PDF.');
+      throw new Error('Unsupported file format. Please upload a file in PNG, JPEG, or PDF format.');
     }
   };
 
@@ -168,7 +168,24 @@ const ResumeAnalyzer: React.FC = () => {
     try {
       const fileData = await prepareFileData(file);
       const prompt = `
-        Analyze this resume and provide the following in a structured JSON format:
+        First, determine if the uploaded document is a resume. A resume should have a format that includes sections like education, work experience, skills, or similar career-related categories, typically 1-2 pages long. If the document is clearly not a resume (e.g., an academic paper with citations, a cover page with a title and abstract, a book excerpt, or an image that does not represent a resume), return the following JSON and do not proceed with further analysis:
+        {
+          "overallScore": 0,
+          "kpis": {
+            "resumeStructureScore": { "score": 0, "feedback": "Document is not a resume." },
+            "jobRelevanceScore": { "score": 0, "feedback": "Document is not a resume." },
+            "contentClarityScore": { "score": 0, "feedback": "Document is not a resume." },
+            "keywordOptimizationScore": { "score": 0, "feedback": "Document is not a resume." },
+            "impactOfAchievementsScore": { "score": 0, "feedback": "Document is not a resume." },
+            "professionalPresentationScore": { "score": 0, "feedback": "Document is not a resume." }
+          },
+          "overallFeedback": "The uploaded document does not appear to be a resume. It looks like an academic paper, cover page, book, or unrelated image. Please upload a resume in PNG, JPEG, or PDF format.",
+          "jobRecommendations": [],
+          "improvements": ["Upload a resume document with sections like education, work experience, and skills."],
+          "lengthTips": ""
+        }
+
+        If the document is a resume, proceed with the following analysis and return the results in this structured JSON format:
         {
           "overallScore": <number out of 100>,
           "kpis": {
@@ -232,7 +249,7 @@ const ResumeAnalyzer: React.FC = () => {
         model: MODEL,
         messages,
         temperature: 0.7,
-        max_tokens: 1500, // Increased to accommodate more detailed response
+        max_tokens: 1500,
       };
 
       const response = await fetch(API_URL, {
@@ -245,7 +262,7 @@ const ResumeAnalyzer: React.FC = () => {
       });
 
       if (!response.ok) {
-        throw new Error(`HTTP Error: ${response.status}`);
+        throw new Error(`Failed to process the file (HTTP ${response.status}). Please ensure the file is a valid PNG, JPEG, or PDF and not corrupted. If the issue persists, try converting the file to a different format and uploading again.`);
       }
 
       const result = await response.json();
@@ -272,7 +289,17 @@ const ResumeAnalyzer: React.FC = () => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
     if (selectedFile) {
+      const fileExtension = selectedFile.name.split('.').pop()?.toLowerCase();
+      if (!['png', 'jpg', 'jpeg', 'pdf'].includes(fileExtension || '')) {
+        setError('Unsupported file format. Please upload a file in PNG, JPEG, or PDF format.');
+        setFile(null);
+        if (fileInputRef.current) {
+          fileInputRef.current.value = '';
+        }
+        return;
+      }
       setFile(selectedFile);
+      setError(null);
     }
   };
 
