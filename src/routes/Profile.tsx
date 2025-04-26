@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { auth, db } from "../services/firebaseConfig";
 import { doc, getDoc, setDoc } from "firebase/firestore";
+import "../styles/index.css";
 import "../styles/Profile.css";
 
 const MAX_BYTES = 100 * 1024;
@@ -125,6 +126,7 @@ export default function Profile() {
 
         <input type="file" accept="application/pdf" onChange={handleFileChange} />
         <button
+          className="button"
           onClick={handleUpload}
           disabled={!file || uploadState.status === "loading"}
         >

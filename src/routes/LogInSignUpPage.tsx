@@ -1,6 +1,7 @@
 import { useState } from "react";
 import LogInForm from "../components/LogInForm";
 import SignUpForm from "../components/SignUpForm";
+import "../styles/index.css";
 import "../styles/LogInSignUpPage.css";
 
 export default function LogInSignUpPage() {

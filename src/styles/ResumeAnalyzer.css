@@ -6,7 +6,7 @@
   }
   
   .left-panel {
-    width: 40%;
+    width: 35%;
     padding: 2rem;
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -17,8 +17,9 @@
   
   .left-panel h2 {
     color: #333;
-    font-size: 1.8rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
+    font-weight: 800;
   }
   
   .form-group {
@@ -35,6 +36,8 @@
   
   .form-group input[type="text"],
   .form-group input[type="file"],
+  .form-group input[type="date"],
+  .form-group select,
   .form-group textarea {
     padding: 0.8rem;
     font-size: 1rem;

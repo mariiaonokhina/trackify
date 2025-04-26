@@ -1,4 +1,5 @@
 import React from "react"; 
+import "../styles/index.css";
 import "../styles/LandingPage.css";
 
 
@@ -8,12 +9,12 @@ return (
       {/* Hero Section */}
       <section className="hero">
         <div className="illustration">
-          <p>ILLUSTRATION ACTIVE PART</p>
+          <img src="../public/form.png" alt="Job Application Form Icon" />
         </div>
         <div className="content">
           <h1>Track Your Job Applications with Ease</h1>
           <p>Simplify your job search with our intuitive tool designed for college students.</p>
-          <a href="#get-started" className="btn">Get Started</a>
+          <a href="/login" className="btn button">Get Started</a>
         </div>
       </section>
 

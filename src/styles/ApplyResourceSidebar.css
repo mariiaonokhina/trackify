@@ -1,14 +1,13 @@
 .sidebar {
     width: 20%;
-    background-color: #f0f0f0;
-    border-right: 1px solid #e5e7eb;
+    background-color: #f3f3f3;
   }
   
   .sidebar-title {
     width: fit-content;
     padding: 1rem;
-    font-size: 1.25rem;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 700;
     margin-bottom: 1rem;
   }
   
@@ -25,13 +24,10 @@
   }
   
   .sidebar-button {
-    color: black;
     background: none;
-    border: none;
     width: 100%;
     text-align: left;
     padding: 1rem;
-    cursor: pointer;
     font-size: 1rem;
   }
   
@@ -39,3 +35,10 @@
     background-color: #e6e6e6;
   }
   
+  @media (max-width: 1050px) {
+
+    .sidebar {
+      width: 100%;
+    }
+
+  }

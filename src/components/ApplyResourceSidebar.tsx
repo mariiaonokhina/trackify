@@ -10,9 +10,9 @@ import '../styles/ApplyResourceSidebar.css';
         <div className="sidebar">
         <h2 className="sidebar-title">Navigation</h2>
         <ul className="sidebar-list">
-        <li className="sidebar-list-item"><button onClick={() => scrollToSection("apply")} className='sidebar-button'>Apply</button></li>
+        <li className="sidebar-list-item"><button onClick={() => scrollToSection("apply")} className='sidebar-button button'>Apply</button></li>
         <li className="sidebar-list-item"></li>
-        <li className="sidebar-list-item"><button onClick={() => scrollToSection("resources")} className='sidebar-button'>Resources</button></li>
+        <li className="sidebar-list-item"><button onClick={() => scrollToSection("resources")} className='sidebar-button button'>Resources</button></li>
         </ul>
       </div>
     );

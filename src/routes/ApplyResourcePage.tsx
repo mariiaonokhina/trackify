@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import ApplyResourceSidebar from '../components/ApplyResourceSidebar';
+import "../styles/index.css";
 import "../styles/ApplyResourcePage.css";
 
 function ApplyResourcePage() {
@@ -8,7 +9,7 @@ function ApplyResourcePage() {
   const rawTitle = searchParams.get('title');
   const rawLocation = searchParams.get('loc');
 
-  // 🧠 Default fallback
+  //default query
   const title = rawTitle || 'Computer Science';
   const location = rawLocation || 'New York';
 
@@ -36,7 +37,7 @@ function ApplyResourcePage() {
         <ApplyResourceSidebar />
   
             <div className="main-content">
-                <section id="apply" className="odd-content-section">
+                <section id="apply" className="content-section">
                     <h3 className="section-title">Apply</h3>
                     <h4>Search results for <i>{title}</i>{location && ` in ${location}`}</h4>
                     {loading ? (
@@ -56,11 +57,11 @@ function ApplyResourcePage() {
                     )}
                 </section>
 
-                <section id="resources" className="even-content-section">
+                <section id="resources" className="content-section">
                     <h3 className="section-title">Resources</h3>
                     <ul>
                     <li><h4>Technical Practice:</h4>
-                        <ul>
+                        <ul className='resourse-list'>
                         <li><button onClick={() => window.open("https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/", "_blank")}>Cracking The Coding Interview</button></li>
                         <li><button onClick={() => window.open("https://medium.freecodecamp.org/10-common-data-structures-explained-with-videos-exercises-aaff6c06fb2b", "_blank")}>Common Data Structures Explained</button></li>
                         <li><button onClick={() => window.open("https://www.bigocheatsheet.com/", "_blank")}>Big-O Cheat Sheet</button></li>
@@ -72,7 +73,7 @@ function ApplyResourcePage() {
                     </li>
 
                     <li><h4>Other Programs:</h4>
-                        <ul>
+                        <ul className='resourse-list'>
                         <li><button onClick={() => window.open("https://www.breakthroughtech.org/where-we-work/new-york/", "_blank")}>Breakthrough Tech</button></li>
                         <li><button onClick={() => window.open("https://www.codepath.org/courses", "_blank")}>CodePath</button></li>
                         <li><button onClick={() => window.open("https://www.projectbasta.com/fellowship", "_blank")}>Project Basta</button></li>
@@ -89,7 +90,7 @@ function ApplyResourcePage() {
                     </li>
 
                     <li><h4>Job Search:</h4>
-                        <ul>
+                        <ul className='resourse-list'>
                         <li><button onClick={() => window.open("http://linkedin.com/jobs", "_blank")}>LinkedIn</button></li>
                         <li><button onClick={() => window.open("https://www.builtinnyc.com/jobs", "_blank")}>Built In NYC (NYC startups + salaries)</button></li>
                         <li><button onClick={() => window.open("https://www.techjobsforgood.com/", "_blank")}>Tech Jobs for Good (civic tech)</button></li>
@@ -104,7 +105,7 @@ function ApplyResourcePage() {
                     </li>
 
                     <li><h4>Tech Events:</h4>
-                        <ul>
+                        <ul className='resourse-list'>
                         <li><button onClick={() => window.open("https://mlh.io/", "_blank")}>Major League Hacking</button></li>
                         <li><button onClick={() => window.open("https://www.builtinnyc.com/events", "_blank")}>Built in NYC Events</button></li>
                         <li><button onClick={() => window.open("http://Eventbrite.com", "_blank")}>Eventbrite</button></li>

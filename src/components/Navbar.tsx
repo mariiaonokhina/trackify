@@ -1,5 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { auth } from '../services/firebaseConfig';
+import { signOut, onAuthStateChanged } from 'firebase/auth';
+import "../styles/index.css";
 import '../styles/Navbar.css';
 
 function Navbar() {
@@ -7,11 +10,28 @@ function Navbar() {
   const [title, setTitle] = useState('');
   const [location, setLocation] = useState('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [user, setUser] = useState<any>(null); // Track logged-in user
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      setUser(firebaseUser);
+    });
+    return () => unsubscribe();
+  }, []);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (!title) return;
     navigate(`/apply?title=${encodeURIComponent(title)}&loc=${encodeURIComponent(location)}`);
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      navigate('/login'); // Redirect to login page after sign out
+    } catch (error) {
+      console.error('Sign out error:', error);
+    }
   };
 
   const toggleMobileMenu = () => {
@@ -35,18 +55,24 @@ function Navbar() {
             <Link to="/profile">Profile</Link>
           </li>
           <li>
-            <Link to="/login">Login</Link>
+            {user ? (
+              <button className="signout-btn" onClick={handleSignOut}>
+                Sign Out
+              </button>
+            ) : (
+              <Link to="/login">Login</Link>
+            )}
           </li>
 		  <li>
             <Link className="analyzer-btn" 
 			to="/resume-analyzer" 
-			style={{ width: '120px' }}>Resume Analyzer</Link>
+			>Resume Analyzer</Link>
           </li>
         </ul>
       </div>
 
       <div className='navbar-center'>
-        <span className='title-logo'><a>Trackify</a></span>
+        <span className='title-logo'><h1>Trackify</h1></span>
       </div>
 
       <div className='navbar-right'>
@@ -64,7 +90,7 @@ function Navbar() {
             onChange={(e) => setLocation(e.target.value)}
           />
           <button type="submit">
-            <img src="search.png" className='search-icon' alt="search" />
+            <img src="search.png" className='icon' alt="search" />
           </button>
         </form>
       </div>

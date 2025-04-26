@@ -9,19 +9,18 @@
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-  }
-  
-  .odd-content-section {
-    padding: 1.5rem;
-    background-color: #f8f8f8;
-  }
-  
-  .even-content-section {
-    padding: 1.5rem;
-    font-weight: normal;
     background-color: #ffffff;
   }
-  .even-content-section ul {
+  
+  .content-section {
+    padding: 1.5rem;
+    margin: 3rem;
+    background-color: #f3f3f3;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .content-section ul {
 
     display: flex;
     flex-direction: column;
@@ -29,14 +28,16 @@
     margin: 0;
   }
 
-  .even-content-section li {
+  .content-section li {
     width: 100%;
   }
-  .even-content-section h4 {
+  .content-section h4 {
     padding: 1rem 0rem;
+    font-size: 1.5rem;
+    font-weight: 600;
   }
 
-  .even-content-section button {
+  .content-section button {
     border: none;
     background-color: #eeeeee;
     color: black;
@@ -45,15 +46,16 @@
     padding: 1rem 1rem;
     text-decoration: none;
     width: 100%;
+    transition: background 0.5s ease-in-out;
   }
   
-  .even-content-section button:hover {
+  .content-section button:hover {
     background-color: #e6e6e6;
   }
   
   .section-title {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 3rem;
+    font-weight: 800;
     margin-bottom: 0.5rem;
   }  
 
@@ -66,4 +68,12 @@
   
   .job-item button {
     margin-top: 0.25rem;
+  }
+
+  @media (max-width: 1050px) {
+
+    .page-container {
+      flex-direction: column;
+    }
+
   }
