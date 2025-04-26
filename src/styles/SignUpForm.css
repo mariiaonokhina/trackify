@@ -1,17 +1,19 @@
 .SignUpForm {
-    background-color: rgb(233, 232, 232);
+    background-color: #f3f3f3;
     display: flex;
     flex-direction: column;
     place-items: center;
     justify-content: space-evenly;
-    border-radius: 10px;
+    border-radius: 12px;
     height: 70vh;
     min-width: 400px;
     width: 40vw;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    font-size: xxx-large;
+    font-size: 4rem;
+    font-weight: 800;
 }
 
 form {
@@ -32,27 +34,23 @@ form {
 }
 
 .log-in-input-field {
-    border: 0.5px solid black;
-    border-radius: 3px;
-    font-size: large;
-    padding: 5px;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+    resize: vertical;
 }
 
 label {
-    text-transform: uppercase;
-    font-weight: 100;
-    font-size: small;
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
 }
 
 .login-form-btn {
     width: 200px;
-    padding: 10px;
-    font-size: large;
-    border-radius: 5px;
-    border: none;
-    background-color: rgb(246, 245, 245);
-    font-weight: bold;
-    cursor: pointer;
 }
 
 .login-github-container {
@@ -67,6 +65,12 @@ label {
     height: auto;
     width: 60px;
     cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.5s ease-in-out;
+}
+
+.github-logo-login:hover {
+    background-color: #ffffff;
 }
 
 .form-error-message {

@@ -87,7 +87,7 @@ export default function SignUpForm () {
             ></input>
           </div>
 
-        <button className="login-form-btn" type="submit">Sign Up</button>
+        <button className="login-form-btn button" type="submit">Sign Up</button>
       </form>
 
       {error && <p className="form-error-message">{error}</p>}

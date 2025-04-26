@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import "../styles/index.css";
 import '../styles/ResumeAnalyzer.css';
 import * as pdfjsLib from 'pdfjs-dist';
 
@@ -338,7 +339,7 @@ const ResumeAnalyzer: React.FC = () => {
             required
           />
         </div>
-        <button className="analyze-resume-btn" onClick={handleSubmit} disabled={loading}>
+        <button className="analyze-resume-btn button" onClick={handleSubmit} disabled={loading}>
           {loading ? 'Analyzing...' : 'Analyze Resume'}
         </button>
         {error && <p className="error">{error}</p>}

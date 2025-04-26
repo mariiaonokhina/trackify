@@ -1,14 +1,6 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-  }
-  
   /* Body Styling */
   body {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     color: #333;
     line-height: 1.6;
   }
@@ -16,19 +8,25 @@
   /* Hero Section */
   .hero {
     display: flex;
-    height: 100vh;
+    min-height: 95vh;
     background-color: #1a1a1a;
     color: white;
   }
   
   .hero .illustration {
     flex: 1;
+    width: 33%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #333;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 1.2rem;
+    margin: 3rem;
+    border-radius: 32px;
+  }
+
+  .hero .illustration img {
+    min-width: 20px;
+    padding: 2rem;
   }
   
   .hero .content {
@@ -36,54 +34,51 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 2rem;
+    padding: 3rem;
   }
   
   .hero .content h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 3rem;
+    font-weight: 900;
     margin-bottom: 1rem;
   }
   
   .hero .content p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
   }
   
   .hero .content .btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: white;
-    color: black;
+    padding: 0.8rem 3rem;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 0.5rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .hero .content .btn:hover {
-    background-color: #e0e0e0;
   }
   
   /* Dashboard Overview */
   .dashboard-overview {
-    background-color: white;
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f3;
     padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
   .dashboard-overview h2 {
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 3rem;
+    font-weight: 900;
     margin-bottom: 1rem;
   }
   .dashboard-overview .dashboard-description {
     font-size: 1rem;
+    font-weight: 400;
     color: #666;
     margin-bottom: 2rem; /* Adds space between description and cards */
   }
   .dashboard-overview p {
     font-size: 1rem;
-    margin-bottom: 2rem;
     color: #666;
   }
   
@@ -94,7 +89,7 @@
   }
   
   .dashboard-overview .card {
-    background-color: #f3f3f3;
+    background-color: #e6e6e6;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -107,12 +102,24 @@
   }
   
   .dashboard-overview .card h3 {
-    font-size: 1.25rem;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 800;
     margin-bottom: 0.5rem;
   }
   
   .dashboard-overview .card p {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    height: fit-content;
+    font-weight: 400;
     color: #666;
+  }
+
+  @media (max-width: 1050px) {
+    .hero {
+      flex-direction: column;
+    }
+    .hero .illustration {
+      width: calc(100% - 6rem);
+      margin: 3rem;
+    }
   }

@@ -64,7 +64,7 @@ export default function LogInForm () {
                 ></input>
             </div>
 
-            <button className="login-form-btn" type="submit">Log In</button>
+            <button className="login-form-btn button" type="submit">Log In</button>
           </form>
 
           {error && <p className="form-error-message">{error}</p>}
