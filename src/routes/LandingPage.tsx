@@ -9,7 +9,7 @@ return (
       {/* Hero Section */}
       <section className="hero">
         <div className="illustration">
-          <img src="../../public/form.png" alt="Job Application Form Icon" />
+          <img src="/form.png" alt="Job Application Form Icon" />
         </div>
         <div className="content">
           <h1>Track Your Job Applications with Ease</h1>

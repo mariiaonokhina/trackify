@@ -318,7 +318,7 @@ const HomePage: React.FC = () => {
               <button className="edit-del-btn button" onClick={() => {
                 setEditingApplication(app);
                 setShowEditModal(true);
-              }}><img className="icon" src="../../public/edit.png"/></button>
+              }}><img className="icon" src="/edit.png"/></button>
           
               <button className="edit-del-btn button" style={{ marginLeft: "10px" }} onClick={async () => {
                 if (window.confirm('Are you sure you want to delete this application?')) {
@@ -326,7 +326,7 @@ const HomePage: React.FC = () => {
                   const updatedApps = await fetchApplications();
                   setApplications(updatedApps);
                 }
-              }}><img className="icon" src="../../public/bin.png"/></button>
+              }}><img className="icon" src="/bin.png"/></button>
             </div>
           </div>          
           ))}
