@@ -13,20 +13,18 @@
 - [X] **User Authentication** – Sign in using GitHub or email
 - [X] **File Management** – Upload and store resumes  
 - [X] **Resume Analyzer** - Upload your resume to get detailed feedback on how to improve it
+- [X] **Application Tracker** – Add, edit, and categorize job applications
+- [X] **Responsive User Interface** – Works on both desktop and mobile
 
 ## 🚀 Planned Features
 - [ ] **Web Scraper** - Search for applications without leaving the website
-- [ ] **Application Tracker** – Add, edit, and categorize job applications  
 - [ ] **Dashboard & Application Summary** – Visualize progress with job status metrics  
 - [ ] **Email Notifications** – Receive reminders for upcoming deadlines  
 - [ ] **Filters & Sorting** – Search applications by status, role, company, or date  
-- [ ] **Responsive User Interface** – Works on both desktop and mobile
 - [ ] **Download Application History as a CSV**
 
 ## 🛠️ Tech Stack
 - **Frontend:** React.js with TypeScript (built with Vite)
-- **Backend:** Firebase
+- **Database:** Firestore & Firebase
 - **Authentication:** GitHub OAuth
-- **Hosting:** Firebase or Netlify
-- **Notifications:** Firebase Cloud Scheduler
-- **Charts & Visualization:** React Recharts
+- **Hosting:** Firebase
